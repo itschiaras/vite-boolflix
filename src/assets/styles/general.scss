@@ -5,3 +5,9 @@ $fa-font-path: '../webfonts';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to top, #050505ba, #050505cc), url(../images/IT-it-20230410-popsignuptwoweeks-perspective_alpha_website_large.jpg) no-repeat top center;
+}
