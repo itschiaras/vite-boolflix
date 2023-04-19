@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent @search-change="getMovieList" />
+  <HeaderComponent @search-change="getMovieList" @search-change-tv="getTvSeriesList"/>
   <main class="container mt-5 bg-light">
     <FilmList/>
   </main>
@@ -37,8 +37,8 @@ export default {
         console.log(options)
       }
       axios.get(url, options).then((res) => {
-        store.filmTvSeriesList = res.data.results
-        console.log(store.filmTvSeriesList)
+        store.movieList = res.data.results
+        console.log(store.movieList)
       })
     },
     getMovieList() {
@@ -58,8 +58,29 @@ export default {
         console.log(options)
       }
       axios.get(movieUrl, options).then((res) => {
-        store.filmTvSeriesList = res.data.results
-        console.log(store.filmTvSeriesList)
+        store.movieList = res.data.results
+        console.log(store.movieList)
+      })
+    },
+    getTvSeriesList() {
+      const tvSeriesUrl = store.baseUrl + store.endPointTvShow
+      let options = {}
+      let params = {}
+      for (let key in store.search) {
+
+        if (store.search[key]) {
+          params[key] = store.search[key]
+
+        }
+      }
+
+      if (Object.keys(params).length > 0) {
+        options.params = params;
+        console.log(options)
+      }
+      axios.get(tvSeriesUrl, options).then((res) => {
+        store.tvSeriesList = res.data.results
+        console.log(store.tvSeriesList)
       })
     }
   },

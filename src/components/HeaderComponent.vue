@@ -32,6 +32,7 @@ export default {
     methods: {
         setSearch() {
             this.$emit('searchChange')
+            this.$emit('searchChangeTv')
         }
     }
 }

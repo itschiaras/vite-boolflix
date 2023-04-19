@@ -1,5 +1,5 @@
 <template>
-    <div class="col card-container mt-5 p-0" v-for="card in store.filmTvSeriesList">
+    <div class="col card-container mt-3 p-0" v-for="card in store.movieList">
         <div class="text-center">
             <!-- <img class="img-fluid" :src="store.Url_img" alt=""> -->
             <p>{{ card.title }}</p>
@@ -28,4 +28,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card-container {
+    background-color: aqua;
+    height: 250px;
+}
+</style>
