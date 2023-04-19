@@ -1,0 +1,14 @@
+Milestone 1
+Studiare l'API e definire il baseUrl da utilizzare (https://api.themoviedb.org/3/) per l'API call.
+Definire gli endpoint che serviranno per la ricerca dei film e serie tv, in questo caso saranno "api_key" e "query".
+Realizzare un layout inizialmente minimale:
+- Header:
+Logo della pagina, casella di ricerca (con parametro query) in base al titolo del film/serie tv con bottone di ricerca per far partire la chiamata API.
+-Main:
+- La chiamata al server ritornerà a schermo le card che visualizzeranno la copertina del film/serie tv che corrisponderanno alla ricerca fatta. La corretta visualizzazione delle immagini richiederà tre pezzi di data: il base_url, il file_size e il file_path che troveremo nella chiave "poster_path".
+
+Milestone 2
+Realizzazione di un layout più complesso:
+Jumbotron: Jumbo con immagine (o video) e titolo di un film in evidenza.
+Home: attraverso l'utilizzo di specifiche chiavi quali: "popularity", "vote_average", "genres".., creare nel Main 3 (o più) sezioni come ad esempio: "I più visti", "I più apprezzati", "Horror" ecc
+Ogni sezione sarà composta da un carosello orizzontale in cui vi saranno le immagini delle copertine dei film/serieTv. Il film che si vorrà selezionare risulterà visivamente attivo grazie ad un bordo bianco attorno, mentre le restanti immagini avranno un overlay nero in trasparenza. Sarà possibile cambiare la selezione del film attivo con un click su un film non attivo oppure sempre con un click su delle frecce a destra e a sinistra del carosello.
