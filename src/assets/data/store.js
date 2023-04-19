@@ -3,10 +3,13 @@ import {reactive} from 'vue';
 export const store = reactive({
     filmTvSeriesList: [],
     baseUrl: 'https://api.themoviedb.org/3',
-    endPointMovie: '/movie/popular',
+    Url_img: 'https://image.tmdb.org/t/p/w300',
+    endPointPopularMovie: '/movie/popular',
+    endPointMovie: '/search/movie',
     endPointTvShow: '',
     search: {
         query: '',
-        api_key: 'fc211de88f7c6b3727074abffafbf059'
+        api_key: 'fc211de88f7c6b3727074abffafbf059',
+        
     }
 })

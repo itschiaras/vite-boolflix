@@ -7,7 +7,7 @@
                 </div>
 
                 <div class="col-6 d-flex align-items-center justify-content-end">
-                    <form>
+                    <form @submit.prevent="setSearch">
                         <input class="me-2" type="text" placeholder="Cerca titolo..." v-model.trim="store.search.query">
                         <button type="submit">Cerca</button>
                     </form>
@@ -27,6 +27,11 @@ export default {
     data() {
         return {
             store
+        }
+    },
+    methods: {
+        setSearch() {
+            this.$emit('searchChange')
         }
     }
 }
