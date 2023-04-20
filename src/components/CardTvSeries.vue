@@ -1,12 +1,12 @@
 <template>
-    <div class="col card-container mt-3 p-0" v-for="card in store.tvSeriesList">
+    <div class="col card-container mt-3 p-0">
         
         <div class="text-center">
-            <!-- <img class="img-fluid" :src="store.Url_img" alt=""> -->
-            <p>{{ card.name }}</p>
-            <p>{{ card.original_name }}</p>
-            <p>{{ card.original_language }}</p>
-            <p>{{ card.vote_average }}</p>
+            <img class="img-fluid" :src="store.Url_img + image" alt="">
+            <p>{{ name }}</p>
+            <p>{{ original_name }}</p>
+            <p>{{ original_language }}</p>
+            <p>{{ vote_average }}</p>
         </div>
     </div>
 </template>
@@ -15,9 +15,11 @@
     import { store } from '../assets/data/store';
     export default {
         name: 'CardTvSeries',
+        props: ['title', 'original_title','language', 'vote', 'image'],
         data() {
             return {
                 store
+                
             }
         }
     }
