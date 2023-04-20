@@ -108,6 +108,7 @@ export default {
   mounted() {
     this.getMostPopular();
     this.getMostPopularTV();
+
   }
 }
 </script>

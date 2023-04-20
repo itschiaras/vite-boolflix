@@ -1,9 +1,15 @@
 <template>
-    <div class="col mt-3 mb-3 p-0 card-container " >
-        <div class="text-center item">
-            <img class="img-fluid" :src="store.Url_img + image" alt="">
+    <div class="col p-0 card-container " >
+        <div class="text-center item h-100">
+            <div class="" v-if="image">
+                <img class="img-fluid" :src="store.Url_img + image" alt="">
+            </div>
+            <div v-else class="w-100 h-100">
+                <img id="no-img" class="img-fluid" src="../assets/images/no_image.webp" alt="">
+            </div>
+            
             <div class="overlay overflow-auto">
-                <p>{{ title }}</p>
+                <p class="mt-5">{{ title }}</p>
                 <p>{{ overview }}</p>
             </div>
         </div>
@@ -40,21 +46,35 @@ export default {
 
 .item {
     position: relative;
+    transition: all 1s;
+    &:hover {
+        scale: 1.2;
+    z-index: 2;
+    }
 }
 .overlay {
   position:absolute;
   top:0;left:0;right:0;bottom:0;
   background-color: rgba(0, 0, 0, 0.766);
+  border: 1px solid white;
   opacity: 0;
   font-size: .8rem;
+  cursor: pointer;
+  transition: all 1s;
+  
 }
 .overlay:hover {
   opacity: 1;
+  
 }
 
 ::-webkit-scrollbar-track {
     background: #00000000;
   }
+
+#no-img {
+    object-fit: cover;
+}
 
 
 </style>
