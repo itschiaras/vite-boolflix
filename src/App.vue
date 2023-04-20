@@ -1,6 +1,6 @@
 <template>
   <HeaderComponent @search-change="getMovieList" @search-change-tv="getTvSeriesList"/>
-  <main class="container mt-5 bg-light">
+  <main class="container mt-5 mb-5 text-white overflow-hidden">
     <FilmList/>
   </main>
   
@@ -39,6 +39,27 @@ export default {
       axios.get(url, options).then((res) => {
         store.movieList = res.data.results
         console.log(store.movieList)
+      })
+    },
+    getMostPopularTV() {
+      const tvSeriesUrl = store.baseUrl + store.endPointPopularTvShow
+      let options = {}
+      let params = {}
+      for (let key in store.search) {
+
+        if (store.search[key]) {
+          params[key] = store.search[key]
+
+        }
+      }
+
+      if (Object.keys(params).length > 0) {
+        options.params = params;
+        console.log(options)
+      }
+      axios.get(tvSeriesUrl, options).then((res) => {
+        store.tvSeriesList = res.data.results
+        console.log(store.tvSeriesList)
       })
     },
     getMovieList() {
@@ -86,8 +107,13 @@ export default {
   },
   mounted() {
     this.getMostPopular();
+    this.getMostPopularTV();
   }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main {
+  background-color: #121212;
+}
+</style>

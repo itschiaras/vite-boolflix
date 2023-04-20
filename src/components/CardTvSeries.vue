@@ -1,12 +1,11 @@
 <template>
-    <div class="col card-container mt-3 p-0">
-        
-        <div class="text-center">
+    <div class="col mt-3 mb-3 p-0 card-container">
+        <div class="text-center item">
             <img class="img-fluid" :src="store.Url_img + image" alt="">
-            <p>{{ name }}</p>
-            <p>{{ original_name }}</p>
-            <p>{{ original_language }}</p>
-            <p>{{ vote_average }}</p>
+            <div class="overlay overflow-auto">
+                <p>{{ title }}</p>
+                <!-- <p>{{ overview }}</p> -->
+            </div>
         </div>
     </div>
 </template>
@@ -15,7 +14,7 @@
     import { store } from '../assets/data/store';
     export default {
         name: 'CardTvSeries',
-        props: ['title', 'original_title','language', 'vote', 'image'],
+        props: ['title', 'original_title','language', 'vote', 'image', 'overview'],
         data() {
             return {
                 store
@@ -27,7 +26,29 @@
 
 <style lang="scss" scoped>
 .card-container {
-    background-color: pink;
-    height: 250px;
+    height: 300px;
+    width: 200px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
+
+.item {
+    position: relative;
+}
+.overlay {
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background-color: rgba(0, 0, 0, 0.766);
+  opacity: 0;
+  font-size: .8rem;
+}
+.overlay:hover {
+  opacity: 1;
+}
+
+::-webkit-scrollbar-track {
+    background: #00000000;
+  }
 </style>

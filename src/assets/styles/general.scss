@@ -12,3 +12,21 @@ body {
     width: 100%;
     background: linear-gradient(to top, #050505ba, #050505cc), url(../images/IT-it-20230410-popsignuptwoweeks-perspective_alpha_website_large.jpg) top center;
 }
+
+::-webkit-scrollbar-thumb {
+    background: #060606;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 1px solid red;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+  }
