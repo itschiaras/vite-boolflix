@@ -2,7 +2,7 @@
     <header class="pt-3">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start">
+                <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start mb-3">
                     <img src="../assets/images/netflix-logo-drawing-png-19.png" alt="Metflix Logo">
                 </div>
 

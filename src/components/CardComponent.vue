@@ -16,9 +16,6 @@
                 </div>
                 <h4 class="mt-2" v-if="overview === ''">Guarda ora!</h4>
                 <p>{{ overview }}</p>
-                
-                <!-- <h5>Guarda ora!</h5>
-                <p> {{ overview }} </p> -->
                
                 
             </div>

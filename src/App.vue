@@ -1,6 +1,6 @@
 <template>
   <HeaderComponent @search-change="getMovieList" @search-change-tv="getTvSeriesList"/>
-  <main class="container mt-5 mb-5 text-white overflow-hidden">
+  <main class="container mt-3 mb-5 text-white overflow-hidden">
     <FilmList/>
     
   </main>
