@@ -2,11 +2,11 @@
     <header class="pt-3">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start">
                     <img src="../assets/images/netflix-logo-drawing-png-19.png" alt="Metflix Logo">
                 </div>
 
-                <div class="col-6 d-flex align-items-center justify-content-end">
+                <div class="col-12 col-sm-6 d-flex align-items-center justify-content-center justify-content-sm-end">
                     <form @submit.prevent="setSearch">
                         <input class="me-2" type="text" placeholder="Cerca titolo..." v-model.trim="store.search.query">
                         <button type="submit">Cerca</button>

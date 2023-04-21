@@ -10,7 +10,17 @@
             
             <div class="overlay overflow-auto">
                 <p class="mt-5">{{ title }}</p>
+                <i class="fa-star" v-for="(n, index) in 5" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></i>
+                <div class="d-flex justify-content-center mt-2">
+                    <img :src="`/svg/language-${language}.svg`" alt="" id="lang">
+                </div>
+                <h4 class="mt-2" v-if="overview === ''">Guarda ora!</h4>
                 <p>{{ overview }}</p>
+                
+                <!-- <h5>Guarda ora!</h5>
+                <p> {{ overview }} </p> -->
+               
+                
             </div>
         </div>
     </div>
@@ -19,15 +29,17 @@
 <script>
 import { store } from '../assets/data/store';
 export default {
-    name: 'CardFilm',
+    name: 'CardComponent',
     props: ['title', 'original_title','language', 'vote', 'image', 'overview'],
     data() {
         return {
             store
         }
     },
-    mounted() {
-        
+    computed: {
+        stars() {
+            return Math.round(this.vote / 2)
+        }
     }
 
 }
@@ -49,7 +61,7 @@ export default {
     transition: all 1s;
     &:hover {
         scale: 1.2;
-    z-index: 2;
+    z-index: 1000;
     }
 }
 .overlay {
@@ -62,6 +74,10 @@ export default {
   cursor: pointer;
   transition: all 1s;
   
+  #lang {
+    width: 20px;
+    height: 20px;
+  }
 }
 .overlay:hover {
   opacity: 1;
@@ -74,6 +90,10 @@ export default {
 
 #no-img {
     object-fit: cover;
+}
+
+.fa-star {
+    color: gold;
 }
 
 

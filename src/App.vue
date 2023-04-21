@@ -2,6 +2,7 @@
   <HeaderComponent @search-change="getMovieList" @search-change-tv="getTvSeriesList"/>
   <main class="container mt-5 mb-5 text-white overflow-hidden">
     <FilmList/>
+    
   </main>
   
 </template>
@@ -34,7 +35,6 @@ export default {
 
       if (Object.keys(params).length > 0) {
         options.params = params;
-        console.log(options)
       }
       axios.get(url, options).then((res) => {
         store.movieList = res.data.results
@@ -55,7 +55,6 @@ export default {
 
       if (Object.keys(params).length > 0) {
         options.params = params;
-        console.log(options)
       }
       axios.get(tvSeriesUrl, options).then((res) => {
         store.tvSeriesList = res.data.results
@@ -76,7 +75,6 @@ export default {
 
       if (Object.keys(params).length > 0) {
         options.params = params;
-        console.log(options)
       }
       axios.get(movieUrl, options).then((res) => {
         store.movieList = res.data.results
@@ -97,7 +95,6 @@ export default {
 
       if (Object.keys(params).length > 0) {
         options.params = params;
-        console.log(options)
       }
       axios.get(tvSeriesUrl, options).then((res) => {
         store.tvSeriesList = res.data.results
